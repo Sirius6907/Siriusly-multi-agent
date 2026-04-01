@@ -1,0 +1,63 @@
+{
+  "name": "@siriusly/ui",
+  "version": "0.3.1",
+  "description": "Prebuilt Sirius EcoSystem board UI assets.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo",
+    "prepack": "rm -f package.dev.json && cp package.json package.dev.json && node ../scripts/generate-ui-package-json.mjs",
+    "postpack": "if [ -f package.dev.json ]; then mv package.dev.json package.json; fi"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@lexical/link": "0.35.0",
+    "lexical": "0.35.0",
+    "@mdxeditor/editor": "^3.52.4",
+    "@siriusly/adapter-claude-local": "workspace:*",
+    "@siriusly/adapter-codex-local": "workspace:*",
+    "@siriusly/adapter-cursor-local": "workspace:*",
+    "@siriusly/adapter-gemini-local": "workspace:*",
+    "@siriusly/adapter-openclaw-gateway": "workspace:*",
+    "@siriusly/adapter-opencode-local": "workspace:*",
+    "@siriusly/adapter-pi-local": "workspace:*",
+    "@siriusly/adapter-utils": "workspace:*",
+    "@siriusly/shared": "workspace:*",
+    "hermes-paperclip-adapter": "^0.2.0",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tanstack/react-query": "^5.90.21",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "lucide-react": "^0.574.0",
+    "mermaid": "^11.12.0",
+    "radix-ui": "^1.4.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.1.5",
+    "remark-gfm": "^4.0.1",
+    "tailwind-merge": "^3.4.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.7",
+    "@types/node": "^25.2.3",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.0.7",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
+  }
+}

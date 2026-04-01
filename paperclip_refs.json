@@ -1,0 +1,167 @@
+[
+  {
+    "file": ".agents\\skills\\release\\SKILL.md",
+    "line": 147,
+    "content": "SIRIUS_VERSION=canary ./scripts/docker-onboard-smoke.sh"
+  },
+  {
+    "file": ".agents\\skills\\release\\SKILL.md",
+    "line": 153,
+    "content": "HOST_PORT=3232 DATA_DIR=./data/release-smoke-canary SIRIUS_VERSION=canary ./scripts/docker-onbo"
+  },
+  {
+    "file": ".github\\workflows\\release-smoke.yml",
+    "line": 69,
+    "content": "SIRIUS_VERSION=\"${{ inputs.sirius_version }}\" \\"
+  },
+  {
+    "file": ".github\\workflows\\release-smoke.yml",
+    "line": 83,
+    "content": "echo \"SMOKE_SIRIUS_VERSION=$SMOKE_SIRIUS_VERSION\""
+  },
+  {
+    "file": "doc\\DOCKER.md",
+    "line": 121,
+    "content": "HOST_PORT=3200 SIRIUS_VERSION=latest ./scripts/docker-onboard-smoke.sh"
+  },
+  {
+    "file": "doc\\DOCKER.md",
+    "line": 123,
+    "content": "SMOKE_DETACH=true SMOKE_METADATA_FILE=/tmp/sirius-smoke.env SIRIUS_VERSION=latest ./scripts/doc"
+  },
+  {
+    "file": "doc\\plans\\2026-03-17-docker-release-browser-e2e.md",
+    "line": 8,
+    "content": "HOST_PORT=3232 DATA_DIR=./data/release-smoke-canary SIRIUS_VERSION=canary ./scripts/docker-onbo"
+  },
+  {
+    "file": "doc\\plans\\2026-03-17-docker-release-browser-e2e.md",
+    "line": 9,
+    "content": "HOST_PORT=3233 DATA_DIR=./data/release-smoke-stable SIRIUS_VERSION=latest ./scripts/docker-onbo"
+  },
+  {
+    "file": "doc\\plans\\2026-03-17-docker-release-browser-e2e.md",
+    "line": 68,
+    "content": "- runs `siriusly@${SIRIUS_VERSION}` inside Docker"
+  },
+  {
+    "file": "doc\\plans\\2026-03-17-docker-release-browser-e2e.md",
+    "line": 331,
+    "content": "- `SIRIUS_VERSION=canary`"
+  },
+  {
+    "file": "doc\\plans\\2026-03-17-docker-release-browser-e2e.md",
+    "line": 332,
+    "content": "- `SIRIUS_VERSION=latest`"
+  },
+  {
+    "file": "doc\\RELEASING.md",
+    "line": 163,
+    "content": "SIRIUS_VERSION=canary ./scripts/docker-onboard-smoke.sh"
+  },
+  {
+    "file": "doc\\RELEASING.md",
+    "line": 169,
+    "content": "SIRIUS_VERSION=latest ./scripts/docker-onboard-smoke.sh"
+  },
+  {
+    "file": "doc\\RELEASING.md",
+    "line": 175,
+    "content": "HOST_PORT=3232 DATA_DIR=./data/release-smoke-canary SIRIUS_VERSION=canary ./scripts/docker-onbo"
+  },
+  {
+    "file": "doc\\RELEASING.md",
+    "line": 176,
+    "content": "HOST_PORT=3233 DATA_DIR=./data/release-smoke-stable SIRIUS_VERSION=latest ./scripts/docker-onbo"
+  },
+  {
+    "file": "pnpm-lock.yaml",
+    "line": 254,
+    "content": "packages/plugins/create-paperclip-plugin:"
+  },
+  {
+    "file": "pnpm-lock.yaml",
+    "line": 506,
+    "content": "hermes-paperclip-adapter:"
+  },
+  {
+    "file": "pnpm-lock.yaml",
+    "line": 642,
+    "content": "hermes-paperclip-adapter:"
+  },
+  {
+    "file": "pnpm-lock.yaml",
+    "line": 2035,
+    "content": "'@paperclipai/adapter-utils@2026.325.0':"
+  },
+  {
+    "file": "pnpm-lock.yaml",
+    "line": 4473,
+    "content": "hermes-paperclip-adapter@0.2.1:"
+  },
+  {
+    "file": "pnpm-lock.yaml",
+    "line": 7656,
+    "content": "'@paperclipai/adapter-utils@2026.325.0': {}"
+  },
+  {
+    "file": "pnpm-lock.yaml",
+    "line": 10257,
+    "content": "hermes-paperclip-adapter@0.2.1:"
+  },
+  {
+    "file": "pnpm-lock.yaml",
+    "line": 10259,
+    "content": "'@paperclipai/adapter-utils': 2026.325.0"
+  },
+  {
+    "file": "scripts\\docker-onboard-smoke.sh",
+    "line": 7,
+    "content": "SIRIUS_VERSION=\"${SIRIUS_VERSION:-latest}\""
+  },
+  {
+    "file": "scripts\\docker-onboard-smoke.sh",
+    "line": 82,
+    "content": "printf 'SMOKE_SIRIUS_VERSION=%q\\n' \"$SIRIUS_VERSION\""
+  },
+  {
+    "file": "scripts\\docker-onboard-smoke.sh",
+    "line": 96,
+    "content": "'timeout 20s npx --yes \"siriusly@${SIRIUS_VERSION}\" auth bootstrap-ceo --data-dir \"$SIRIUS_HOME"
+  },
+  {
+    "file": "scripts\\docker-onboard-smoke.sh",
+    "line": 243,
+    "content": "--build-arg SIRIUS_VERSION=\"$SIRIUS_VERSION\" \\"
+  },
+  {
+    "file": "server\\package.json",
+    "line": 60,
+    "content": "\"hermes-paperclip-adapter\": \"^0.2.0\","
+  },
+  {
+    "file": "server\\src\\adapters\\registry.ts",
+    "line": 77,
+    "content": "} from \"hermes-paperclip-adapter/server\";"
+  },
+  {
+    "file": "server\\src\\adapters\\registry.ts",
+    "line": 81,
+    "content": "} from \"hermes-paperclip-adapter\";"
+  },
+  {
+    "file": "ui\\package.json",
+    "line": 35,
+    "content": "\"hermes-paperclip-adapter\": \"^0.2.0\","
+  },
+  {
+    "file": "ui\\src\\adapters\\hermes-local\\index.ts",
+    "line": 2,
+    "content": "import { parseHermesStdoutLine } from \"hermes-paperclip-adapter/ui\";"
+  },
+  {
+    "file": "ui\\src\\adapters\\hermes-local\\index.ts",
+    "line": 4,
+    "content": "import { buildHermesConfig } from \"hermes-paperclip-adapter/ui\";"
+  }
+]

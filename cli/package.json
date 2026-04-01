@@ -1,0 +1,53 @@
+{
+  "name": "siriusly",
+  "version": "0.3.1",
+  "description": "Sirius EcoSystem CLI — orchestrate AI agent teams to run a business",
+  "type": "module",
+  "bin": {
+    "siriusly": "./dist/index.js"
+  },
+  "keywords": [
+    "sirius",
+    "ai",
+    "agents",
+    "orchestration",
+    "cli"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "node --input-type=module -e \"import fs from 'node:fs'; import esbuild from 'esbuild'; import config from './esbuild.config.mjs'; await esbuild.build(config); try { fs.chmodSync('dist/index.js', 0o755); } catch (e) { }\"",
+    "clean": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.10.0",
+    "@siriusly/adapter-claude-local": "workspace:*",
+    "@siriusly/adapter-codex-local": "workspace:*",
+    "@siriusly/adapter-cursor-local": "workspace:*",
+    "@siriusly/adapter-gemini-local": "workspace:*",
+    "@siriusly/adapter-opencode-local": "workspace:*",
+    "@siriusly/adapter-pi-local": "workspace:*",
+    "@siriusly/adapter-openclaw-gateway": "workspace:*",
+    "@siriusly/adapter-utils": "workspace:*",
+    "@siriusly/db": "workspace:*",
+    "@siriusly/server": "workspace:*",
+    "@siriusly/shared": "workspace:*",
+    "drizzle-orm": "0.38.4",
+    "dotenv": "^17.0.1",
+    "commander": "^13.1.0",
+    "embedded-postgres": "^18.1.0-beta.16",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.12.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}

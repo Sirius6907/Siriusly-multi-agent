@@ -1,0 +1,18 @@
+services:
+  sirius:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${SIRIUS_PORT:-3100}:3100"
+    environment:
+      HOST: "0.0.0.0"
+      SIRIUS_HOME: "/sirius"
+      OPENAI_API_KEY: "${OPENAI_API_KEY:-}"
+      ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY:-}"
+      SIRIUS_DEPLOYMENT_MODE: "authenticated"
+      SIRIUS_DEPLOYMENT_EXPOSURE: "private"
+      SIRIUS_PUBLIC_URL: "${SIRIUS_PUBLIC_URL:-http://localhost:3100}"
+      BETTER_AUTH_SECRET: "${BETTER_AUTH_SECRET:?BETTER_AUTH_SECRET must be set}"
+    volumes:
+      - "${SIRIUS_DATA_DIR:-./data/docker-sirius}:/sirius"
