@@ -4,7 +4,7 @@
 
 **Open-source orchestration for zero-human companies.**
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg?style=for-the-badge)](https://github.com/siriusly-ecosystem/)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg?style=for-the-badge)](https://github.com/Sirius6907/Siriusly-multi-agent)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://postgresql.org)
@@ -50,22 +50,29 @@ Siriusly operates as a multi-tier monorepo architecture, splitting concerns secu
 ### Component Topology
 
 ```mermaid
-block-beta
-columns 3
-  UI["Board UI (React/Vite)"]
-  API["API Server (Express)"]
-  DB["Ledger (Drizzle/PostgreSQL)"]
+flowchart TD
+  subgraph Boardroom [The Dashboard]
+    UI["Board UI (React/Vite)"]
+  end
+
+  subgraph Control_Plane [The API]
+    API["API Server (Express)"]
+  end
+
+  subgraph Ledger [The DB]
+    DB["Postgres (Drizzle/PgLite)"]
+  end
   
-  UI --> API
-  API --> DB
+  UI <--> API
+  API <--> DB
   
-  subgraph Agent_Orchestration
+  subgraph Agent_Orchestration [Autonomous Workers]
     Adapter1["Claude Adapter"]
     Adapter2["Codex Adapter"]
     Adapter3["Webhook Adapter"]
   end
   
-  API -- "Heartbeats" --> Agent_Orchestration
+  API -- "Heartbeat Loops" --> Agent_Orchestration
 ```
 
 ### The Autonomous Work Loop
@@ -197,7 +204,7 @@ Siriusly is designed for a sub-5-minute "Time to Magic" workflow.
 Clone the repository and instantly launch the embedded control plane:
 
 ```bash
-git clone https://github.com/siriusly-ecosystem/siriusly-multi-agent.git
+git clone https://github.com/Sirius6907/Siriusly-multi-agent.git
 cd siriusly-multi-agent
 
 # Install workspace dependencies deeply across the monorepo
